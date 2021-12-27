@@ -52,12 +52,8 @@ public class Main extends SimpleApplication {
         base.setMaterial(baseMat);
         playerNode.attachChild(base);
         
-        Box towerBox = new Box(1, 3, 1);
-        Geometry tower = new Geometry("Tower", towerBox);
-        Material towerMat = new Material(assetManager, "Common/MatDefs/Misc/Unshaded.j3md");
-        towerMat.setColor("Color", ColorRGBA.Green);
-        tower.setMaterial(towerMat);
-        towerNode.attachChild(tower);
+        createGeometryForTowerNode(towerNode);
+        
         
         Box creepBox = new Box(0.5f, 0.5f, 0.5f);
         Geometry creep = new Geometry("Base", creepBox);
@@ -82,6 +78,15 @@ public class Main extends SimpleApplication {
         
         //setDisplayFps(false);
         //setDisplayStatView(false);
+    }
+    
+    void createGeometryForTowerNode(Node towerNode) {
+        Box towerBox = new Box(1, 3, 1);
+        Geometry tower = new Geometry("Tower", towerBox);
+        Material towerMat = new Material(assetManager, "Common/MatDefs/Misc/Unshaded.j3md");
+        towerMat.setColor("Color", ColorRGBA.Green);
+        tower.setMaterial(towerMat);
+        towerNode.attachChild(tower);
     }
 
     @Override
